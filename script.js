@@ -19,10 +19,15 @@ document.getElementById("hero").classList.remove("hidden")
 
 }else{
 
-alert("Wrong credentials")
+let box = document.querySelector(".loginBox")
+
+box.classList.add("shake")
+
+setTimeout(()=>{
+box.classList.remove("shake")
+},400)
 
 }
-
 }
 
 window.closeAbout = function(){
