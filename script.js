@@ -7,10 +7,23 @@ title.addEventListener("click",()=>{
 document.getElementById("about").classList.remove("hidden")
 })
 
-window.enterSite = function(){
+function enterSite(){
+
+let u = document.getElementById("user").value
+let p = document.getElementById("pass").value
+
+if(u === "keigo" && p === "stark"){
+
 document.getElementById("login").classList.add("hidden")
 document.getElementById("hero").classList.remove("hidden")
+
+}else{
+
+alert("Wrong credentials")
+
 }
+
+
 
 window.closeAbout = function(){
 document.getElementById("about").classList.add("hidden")
