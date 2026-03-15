@@ -17,9 +17,17 @@ if(u === "keigo" && p === "stark"){
 document.getElementById("login").classList.add("hidden")
 document.getElementById("hero").classList.remove("hidden")
 
-}else{
+}
 
-alert("Wrong credentials")
+else{
+
+let box = document.querySelector(".loginBox")
+
+box.classList.add("shake")
+
+setTimeout(()=>{
+box.classList.remove("shake")
+},400)
 
 }
 
