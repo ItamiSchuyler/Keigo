@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Keigo</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- LOGIN -->
+
+<section class="login" id="login">
+
+<h1>Title</h1>
+
+<input placeholder="username">
+
+<input placeholder="password" type="password">
+
+<button onclick="enter()">ENTER</button>
+
+</section>
+
+<!-- HERO -->
+
+<section class="hero hidden" id="hero">
+
+<img src="assets/giyu.png" class="character">
+
+<h2 onclick="openCard()">Keigo</h2>
+
+<p class="desc">
+
+Lorem ipsum dolor sit amet
+
+</p>
+
+<div class="arrow">
+
+↓
+
+</div>
+
+</section>
+
+<!-- ABOUT CARD -->
+
+<div class="card hidden" id="card">
+
+<div class="close" onclick="closeCard()">
+
+X
+
+</div>
+
+<div class="cardBox">
+
+<img src="assets/keigo.png">
+
+<div class="info">
+
+<h3>Keigo</h3>
+
+<p>IDNUMXXXX</p>
+
+<div class="data">
+
+<label>Name:</label>
+
+<span>Ferch</span>
+
+<label>Country:</label>
+
+<span>Mexico</span>
+
+<label>Favorite number:</label>
+
+<span>22</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PLAYLIST -->
+
+<div class="playlist">
+
+♫ Playlist
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
