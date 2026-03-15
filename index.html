@@ -10,25 +10,35 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="bg"></div>
+<div class="background"></div>
+
+<div class="particles"></div>
 
 <!-- LOGIN -->
 
 <section class="login" id="login">
 
-<h1>Title</h1>
+<div class="loginBox">
+
+<h1>Keigo</h1>
 
 <input placeholder="username">
 
 <input placeholder="password" type="password">
 
-<button onclick="enter()">ENTER</button>
+<button onclick="enterSite()">
+
+Enter
+
+</button>
+
+</div>
 
 </section>
 
@@ -38,53 +48,73 @@
 
 <img src="assets/giyu.png" class="character">
 
-<h2 onclick="openCard()">Keigo</h2>
+<h2 id="title">
 
-<p class="desc">
+Keigo
 
-Lorem ipsum dolor sit amet
+</h2>
+
+<p class="tag">
+
+Digital Identity
 
 </p>
 
-<div class="arrow">
-
-↓
-
-</div>
-
 </section>
 
-<!-- ABOUT CARD -->
+<!-- ABOUT -->
 
-<div class="card hidden" id="card">
+<section class="about hidden" id="about">
 
-<div class="close" onclick="closeCard()">
+<div class="aboutCard">
 
-X
-
-</div>
-
-<div class="cardBox">
+<div class="left">
 
 <img src="assets/keigo.png">
 
-<div class="info">
+<div class="quote">
 
-<h3>Keigo</h3>
+Lorem ipsum dolor sit amet consectetur
 
-<p>IDNUMXXXX</p>
+</div>
+
+</div>
+
+<div class="right">
+
+<h3>
+
+Keigo
+
+</h3>
+
+<p class="id">
+
+IDNUMXXXX
+
+</p>
 
 <div class="data">
 
-<label>Name:</label>
+<div>
+
+<label>Name</label>
 
 <span>Ferch</span>
 
-<label>Country:</label>
+</div>
+
+<div>
+
+<label>Country</label>
 
 <span>Mexico</span>
 
-<label>Favorite number:</label>
+</div>
+
+<div>
+
+<label>Favorite Number</label>
 
 <span>22</span>
 
@@ -94,18 +124,38 @@ X
 
 </div>
 
-</div>
+<div class="close" onclick="closeAbout()">
 
-<!-- PLAYLIST -->
-
-<div class="playlist">
-
-♫ Playlist
+✕
 
 </div>
+
+</div>
+
+</section>
+
+<!-- MUSIC -->
+
+<div class="music">
+
+<button onclick="toggleMusic()">
+
+♫
+
+</button>
+
+</div>
+
+<audio id="player" loop>
+
+<source src="assets/music.mp3">
+
+</audio>
 
 <script src="script.js"></script>
 
 </body>
+
+</html>
 
 </html>
