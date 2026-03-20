@@ -57,6 +57,12 @@ document.querySelector(".loginBox").classList.remove("shake")
 }
 }
 
+  document.querySelector(".scrollDown").addEventListener("click",()=>{
+document.getElementById("posts").scrollIntoView({
+behavior:"smooth"
+})
+})
+
 /* ABOUT */
 
 title.addEventListener("click",()=>{
