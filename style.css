@@ -55,30 +55,51 @@ cursor:pointer;
 /* POSTS */
 
 .posts{
-background:rgba(0,0,0,.8);
+min-height:100vh;
+padding:120px 40px;
+
+background:rgba(0,0,0,.6);
 backdrop-filter:blur(10px);
-gap:40px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:60px;
+
+animation:fade 1s;
+}
+
+.postsTitle{
+font-size:60px;
+color:var(--neon);
+
+text-shadow:
+0 0 10px var(--neon),
+0 0 30px var(--neonStrong);
 }
 
 .post{
+max-width:500px;
 text-align:center;
-max-width:400px;
 }
 
 .post img{
 width:100%;
-border-radius:10px;
-box-shadow:0 0 20px var(--neonSoft);
+border-radius:15px;
+
+box-shadow:
+0 0 20px var(--neonSoft),
+0 0 40px rgba(0,0,0,.6);
 }
 
 .post p{
-margin-top:10px;
+margin-top:15px;
+opacity:.8;
 }
-
 /* ABOUT FIX */
 
 .about{
-position:fixed;
+position:absolute;
 top:0;
 left:0;
 width:100%;
