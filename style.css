@@ -386,6 +386,29 @@ color:black;
 animation:shake .4s;
 }
 
+#fade{
+
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+
+top:0;
+left:0;
+
+pointer-events:none;
+
+opacity:0;
+transition:opacity .6s;
+
+z-index:999;
+
+}
+
+#fade.active{
+opacity:1;
+}
+
 /* UTIL */
 
 .hidden{
