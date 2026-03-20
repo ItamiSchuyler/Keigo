@@ -1,28 +1,22 @@
+:root{
+--neon:#39ff14;
+--neonSoft:#39ff1466;
+--neonStrong:#39ff14cc;
+}
+
 *{
-
 box-sizing:border-box;
-
 }
 
 body{
-  
-:root{
---neon:#39ff14;
---neonSoft:#39ff1488;
---darkGlass:rgba(0,0,0,.35);
-}
-  
 margin:0;
-
 font-family:Poppins;
-
 color:white;
-
 overflow:hidden;
-
 background:black;
-
 }
+
+/* BACKGROUND */
 
 .background{
 position:fixed;
@@ -32,371 +26,274 @@ z-index:-2;
 
 background-size:cover;
 background-position:center;
-filter:blur(8px) brightness(.6);
+
+filter:blur(6px) brightness(.8);
+
 transform:scale(1.1);
-
-transition:1s; /* animación suave al cambiar fondo */
+transition:1s;
 }
-
-
 
 /* PARTICLES */
 
 .particles{
-
 position:fixed;
-
 width:100%;
 height:100%;
-
 pointer-events:none;
 
 background-image:
-radial-gradient(white 1px, transparent 1px);
+radial-gradient(var(--neon) 1px, transparent 1px);
 
 background-size:50px 50px;
-
-opacity:.15;
+opacity:.25;
 
 animation:move 40s linear infinite;
-
 }
 
 @keyframes move{
-
-from{
-
-transform:translateY(0);
-
-}
-
-to{
-
-transform:translateY(-500px);
-
-}
-
+from{transform:translateY(0);}
+to{transform:translateY(-500px);}
 }
 
 /* LOGIN */
 
 .login{
-
 position:absolute;
-
 width:100%;
-
 height:100%;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
 }
 
 .loginBox{
-
 backdrop-filter:blur(20px);
-
-background:rgba(255,255,255,.05);
+background:rgba(0,0,0,.35);
 
 padding:40px;
-
 border-radius:15px;
 
-border:1px solid rgba(255,255,255,.2);
+border:1px solid var(--neonSoft);
 
 text-align:center;
-
 animation:fade 1s;
 
-  box-shadow:
-0 0 20px var(--neonSoft),
-inset 0 0 20px rgba(255,255,255,.05);
-
+box-shadow:
+0 0 20px var(--neonSoft);
 }
 
 .login input{
-
 display:block;
-
 width:280px;
-
 margin:15px;
-
 padding:12px;
 
 background:transparent;
-
 border:1px solid rgba(255,255,255,.4);
-
 color:white;
-
 }
 
-
 .login input:focus{
-
 outline:none;
-
 border:1px solid var(--neon);
 
 box-shadow:
-0 0 5px var(--neon),
-0 0 15px var(--neonSoft);
-
+0 0 10px var(--neon),
+0 0 20px var(--neonSoft);
 }
 
 .login button{
-
 margin-top:10px;
-
 padding:12px 40px;
 
 background:transparent;
+border:1px solid var(--neon);
 
-border:1px solid white;
-
-color:white;
-
-cursor:pointer;
-
-transition:.4s; border:1px solid var(--neon);
 color:var(--neon);
-
+cursor:pointer;
+transition:.4s;
 }
 
 .login button:hover{
-
 background:var(--neon);
 color:black;
 
 box-shadow:
-0 0 10px var(--neon),
-0 0 30px var(--neon);
-
+0 0 15px var(--neon),
+0 0 40px var(--neonStrong);
 }
+
 /* HERO */
 
 .hero{
-
 position:absolute;
-
 width:100%;
-
 height:100%;
-
 text-align:center;
-
 animation:fade 1.5s;
-
 }
 
 .hero h2{
-
 font-size:100px;
 font-weight:200;
 margin-top:200px;
 cursor:pointer;
-transition:.4s;
 
 color:var(--neon);
+letter-spacing:5px;
 
 text-shadow:
 0 0 5px var(--neon),
-0 0 10px var(--neon),
-0 0 20px var(--neon),
-0 0 40px var(--neonSoft);
+0 0 15px var(--neon),
+0 0 30px var(--neonStrong);
 
-letter-spacing:5px;
-
+animation:neonPulse 2.5s infinite;
+transition:.4s;
 }
 
 .hero h2:hover{
 letter-spacing:15px;
+}
 
+@keyframes neonPulse{
+
+0%{
 text-shadow:
-0 0 10px var(--neon),
+0 0 5px var(--neon),
+0 0 15px var(--neon);
+}
+
+50%{
+text-shadow:
 0 0 20px var(--neon),
-0 0 40px var(--neon),
-0 0 80px var(--neon);
+0 0 40px var(--neonStrong);
+}
+
+100%{
+text-shadow:
+0 0 5px var(--neon),
+0 0 15px var(--neon);
+}
+
 }
 
 .character{
-
 position:absolute;
-
 left:5%;
-
 bottom:0;
-
 height:75%;
 
-filter:drop-shadow(0 0 20px black);
-
+filter:
+drop-shadow(0 0 20px black)
+drop-shadow(0 0 25px var(--neonSoft));
 }
 
 /* ABOUT */
 
 .about{
-
 position:absolute;
-
 width:100%;
-
 height:100%;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
 
-background:rgba(0,0,0,.5);
-
+background:rgba(0,0,0,.6);
 backdrop-filter:blur(10px);
 
 animation:fade .6s;
-
 }
 
 .aboutCard{
-
 width:750px;
-
 height:420px;
 
-background:rgba(255,255,255,.05);
+background:rgba(0,0,0,.35);
 
 border-radius:20px;
-
 display:flex;
 
 padding:20px;
-
-border:1px solid rgba(255,255,255,.2);
+border:1px solid var(--neonSoft);
 
 position:relative;
 
-animation:card .6s; box-shadow:
-0 0 20px var(--neonSoft);
+animation:card .6s;
 
+box-shadow:
+0 0 25px var(--neonSoft);
 }
 
 @keyframes card{
-
 from{
-
 transform:scale(.8);
-
 opacity:0;
-
 }
-
 to{
-
 transform:scale(1);
-
 opacity:1;
-
 }
-
 }
 
 .left img{
-
 width:260px;
-
 border-radius:15px;
-
 }
 
 .quote{
-
 background:black;
-
 padding:15px;
-
 border-radius:20px;
-
 margin-top:10px;
-
 font-size:13px;
-
 }
 
 .right{
-
 padding:20px;
-
 }
 
 .data{
-
 margin-top:20px;
-
 }
 
 .data div{
-
 margin:15px 0;
-
 }
 
 label{
-
 display:block;
-
 font-size:12px;
-
 opacity:.6;
-
 }
 
 .close{
-
 position:absolute;
-
 top:20px;
-
 right:25px;
 
 cursor:pointer;
-
 font-size:20px;
-
-}
-
-.close{
 
 color:var(--neon);
 
 text-shadow:
-0 0 5px var(--neon),
-0 0 15px var(--neon);
-
+0 0 10px var(--neon),
+0 0 25px var(--neonStrong);
 }
 
 /* MUSIC */
 
 .music{
-
 position:absolute;
-
 bottom:40px;
-
 left:40px;
-
 }
 
 .music button{
-
 width:60px;
 height:60px;
-border-radius:50%;
 
+border-radius:50%;
 border:1px solid var(--neon);
 
 background:transparent;
@@ -407,20 +304,19 @@ cursor:pointer;
 transition:.4s;
 
 box-shadow:
-0 0 10px var(--neonSoft);
-
+0 0 15px var(--neonSoft);
 }
 
 .music button:hover{
-
 background:var(--neon);
 color:black;
 
 box-shadow:
-0 0 20px var(--neon),
-0 0 50px var(--neon);
-
+0 0 25px var(--neon),
+0 0 60px var(--neonStrong);
 }
+
+/* SHAKE */
 
 @keyframes shake{
 0%{transform:translateX(0)}
@@ -434,8 +330,9 @@ box-shadow:
 animation:shake .4s;
 }
 
-#fade{
+/* FADE SCREEN */
 
+#fade{
 position:fixed;
 width:100%;
 height:100%;
@@ -445,38 +342,20 @@ top:0;
 left:0;
 
 pointer-events:none;
-
 opacity:0;
-transition:opacity .6s;
+
+transition:.4s;
 
 z-index:999;
-
-}
-
-#fade.active{
-opacity:1;
 }
 
 /* UTIL */
 
 .hidden{
-
 display:none;
-
 }
 
 @keyframes fade{
-
-from{
-
-opacity:0;
-
-}
-
-to{
-
-opacity:1;
-
-}
-
+from{opacity:0;}
+to{opacity:1;}
 }
