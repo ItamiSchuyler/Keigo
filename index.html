@@ -1,68 +1,151 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seiren</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="fade"></div>
-    <div id="glitch"></div>
-    <div class="background" id="bg"></div>
-    <div class="particles"></div>
-    <!-- LOGIN -->
-    <section class="login" id="login">
-      <div class="loginBox">
-        <h1>Seiren</h1>
-        <input id="user" placeholder="username">
-        <input id="pass" placeholder="password" type="password">
-        <button onclick="enterSite()"> Enter </button>
-      </div>
-    </section>
-    <!-- HERO -->
-    <section class="hero hidden" id="hero">
-      <img src="https://i.postimg.cc/2S17WjtY/Nara-Shikamaru-full-714829-copia.png" class="character">
-      <h2 id="title"> Seiren </h2>
-      <p class="tag"> Stark wie rock. </p>
-    </section>
-    <!-- ABOUT -->
-    <section class="about hidden" id="about">
-      <div class="aboutCard">
-        <div class="left">
-          <img src="https://i.postimg.cc/C1yrvn8h/tumblr-73ca0256dde3dba1ce6d8b2dcd92bb7d-73cd4857-540.gif" class="left img">
-          <img src="https://i.postimg.cc/1RMGYNhM/tumblr-0c64585047de62ad310a3907a78b3584-7878e782-540.gif" class="left img">
-          <div class="quote"> Lorem ipsum dolor sit amet consectetur </div>
-        </div>
-        <div class="right">
-          <h3> Seiren </h3>
-          <p class="id"> IDNUMXXXX </p>
-          <div class="data">
-            <div>
-              <label>Name</label>
-              <span>Ferch</span>
-            </div>
-            <div>
-              <label>Country</label>
-              <span>Mexico</span>
-            </div>
-            <div>
-              <label>Favorite Number</label>
-              <span>22</span>
-            </div>
-          </div>
-        </div>
-        <div class="close" onclick="closeAbout()"> ✕ </div>
-      </div>
-    </section>
-    <!-- MUSIC -->
-    <div class="music">
-      <button onclick="toggleMusic()"> ♫ </button>
-    </div>
-    <audio id="player" loop>
-      <source src="assets/music.mp3">
-    </audio>
-    <script src="script.js"></script>
-  </body>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Seiren</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="fade"></div>
+
+<div id="glitch"></div>
+
+<div class="background" id="bg"></div>
+
+<div class="particles"></div>
+
+<!-- LOGIN -->
+
+<section class="login" id="login">
+
+<div class="loginBox">
+
+<h1>Seiren</h1>
+
+<input id="user" placeholder="username">
+
+<input id="pass" placeholder="password" type="password">
+
+<button type="button" onclick="enterSite()">
+Enter
+</button>
+
+</div>
+
+</section>
+
+<!-- HERO -->
+
+<section class="hero hidden" id="hero">
+
+<img src="https://i.postimg.cc/2S17WjtY/Nara-Shikamaru-full-714829-copia.png"
+class="character">
+
+<h2 id="title">
+Seiren
+</h2>
+
+<p class="tag">
+Stark wie rock.
+</p>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about hidden" id="about">
+
+<div class="aboutCard">
+
+<div class="left">
+
+<img src="https://i.postimg.cc/C1yrvn8h/tumblr-73ca0256dde3dba1ce6d8b2dcd92bb7d-73cd4857-540.gif">
+
+<img src="https://i.postimg.cc/1RMGYNhM/tumblr-0c64585047de62ad310a3907a78b3584-7878e782-540.gif">
+
+<div class="quote">
+
+Lorem ipsum dolor sit amet consectetur
+
+</div>
+
+</div>
+
+<div class="right">
+
+<h3>Seiren</h3>
+
+<p class="id">
+IDNUMXXXX
+</p>
+
+<div class="data">
+
+<div>
+
+<label>Name</label>
+
+<span>Ferch</span>
+
+</div>
+
+<div>
+
+<label>Country</label>
+
+<span>Mexico</span>
+
+</div>
+
+<div>
+
+<label>Favorite Number</label>
+
+<span>22</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="close" onclick="closeAbout()">
+✕
+</div>
+
+</div>
+
+</section>
+
+<!-- MUSIC -->
+
+<div class="music">
+
+<button type="button" onclick="toggleMusic()">
+♫
+</button>
+
+</div>
+
+<audio id="player" loop>
+
+<source src="assets/music.mp3">
+
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+
 </html>
