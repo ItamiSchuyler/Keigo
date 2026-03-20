@@ -11,17 +11,33 @@ let character = document.querySelector(".character")
 
 function animeTransition(img){
 
-fade.style.transition = "opacity .25s"
+fade.style.transition = "opacity .2s"
 fade.style.opacity = "1"
 
 setTimeout(()=>{
 
 bg.style.backgroundImage = "url('"+img+"')"
 
-fade.style.transition = "opacity .7s"
+fade.style.transition = "opacity .6s"
 fade.style.opacity = "0"
 
-},250)
+},200)
+
+}
+
+/* ========= GLITCH IMPACT ========= */
+
+function triggerGlitch(){
+
+glitch.classList.add("glitchActive")
+
+/* pequeño freeze para efecto anime */
+document.body.style.filter = "contrast(1.4) brightness(1.2)"
+
+setTimeout(()=>{
+document.body.style.filter = "none"
+glitch.classList.remove("glitchActive")
+},350)
 
 }
 
@@ -33,11 +49,17 @@ bg.style.backgroundImage =
 /* ========= EVENTOS ========= */
 
 title.addEventListener("click",()=>{
+
+triggerGlitch()
+
+setTimeout(()=>{
 document.getElementById("about").classList.remove("hidden")
 
 animeTransition(
 "https://i.postimg.cc/L8bzDdPB/wp13966112-shikamaru-pc-wallpapers.jpg"
 )
+},120)
+
 })
 
 window.enterSite = function(){
@@ -47,15 +69,9 @@ let p = document.getElementById("pass").value
 
 if(u === "seiren" && p === "stark"){
 
-/* GLITCH */
-
-glitch.style.opacity = "1"
+triggerGlitch()
 
 setTimeout(()=>{
-glitch.style.opacity = "0"
-},180)
-
-/* CAMBIO PANTALLA */
 
 document.getElementById("login").classList.add("hidden")
 document.getElementById("hero").classList.remove("hidden")
@@ -63,6 +79,8 @@ document.getElementById("hero").classList.remove("hidden")
 animeTransition(
 "https://i.postimg.cc/zGVhVdQm/wp13966252-shikamaru-pc-wallpapers.jpg"
 )
+
+},150)
 
 }else{
 
@@ -80,11 +98,17 @@ box.classList.remove("shake")
 
 window.closeAbout = function(){
 
+triggerGlitch()
+
+setTimeout(()=>{
+
 document.getElementById("about").classList.add("hidden")
 
 animeTransition(
 "https://i.postimg.cc/zGVhVdQm/wp13966252-shikamaru-pc-wallpapers.jpg"
 )
+
+},120)
 
 }
 
@@ -96,22 +120,18 @@ player.pause()
 }
 }
 
-/* ========= PARALLAX + GLOW DINAMICO ========= */
+/* ========= PARALLAX + GLOW ========= */
 
 document.addEventListener("mousemove",(e)=>{
 
 let x = e.clientX / window.innerWidth
 let y = e.clientY / window.innerHeight
 
-/* PARALLAX FONDO */
-
 let moveX = (x - 0.5) * 25
 let moveY = (y - 0.5) * 25
 
 bg.style.transform =
 "scale(1.12) translate("+moveX+"px,"+moveY+"px)"
-
-/* GLOW PERSONAJE */
 
 if(character){
 
