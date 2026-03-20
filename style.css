@@ -5,7 +5,13 @@ box-sizing:border-box;
 }
 
 body{
-
+  
+:root{
+--neon:#39ff14;
+--neonSoft:#39ff1488;
+--darkGlass:rgba(0,0,0,.35);
+}
+  
 margin:0;
 
 font-family:Poppins;
@@ -106,6 +112,10 @@ text-align:center;
 
 animation:fade 1s;
 
+  box-shadow:
+0 0 20px var(--neonSoft),
+inset 0 0 20px rgba(255,255,255,.05);
+
 }
 
 .login input{
@@ -126,6 +136,19 @@ color:white;
 
 }
 
+
+.login input:focus{
+
+outline:none;
+
+border:1px solid var(--neon);
+
+box-shadow:
+0 0 5px var(--neon),
+0 0 15px var(--neonSoft);
+
+}
+
 .login button{
 
 margin-top:10px;
@@ -140,18 +163,21 @@ color:white;
 
 cursor:pointer;
 
-transition:.4s;
+transition:.4s; border:1px solid var(--neon);
+color:var(--neon);
 
 }
 
 .login button:hover{
 
-background:white;
-
+background:var(--neon);
 color:black;
 
-}
+box-shadow:
+0 0 10px var(--neon),
+0 0 30px var(--neon);
 
+}
 /* HERO */
 
 .hero{
@@ -171,21 +197,31 @@ animation:fade 1.5s;
 .hero h2{
 
 font-size:100px;
-
 font-weight:200;
-
 margin-top:200px;
-
 cursor:pointer;
-
 transition:.4s;
+
+color:var(--neon);
+
+text-shadow:
+0 0 5px var(--neon),
+0 0 10px var(--neon),
+0 0 20px var(--neon),
+0 0 40px var(--neonSoft);
+
+letter-spacing:5px;
 
 }
 
 .hero h2:hover{
+letter-spacing:15px;
 
-letter-spacing:10px;
-
+text-shadow:
+0 0 10px var(--neon),
+0 0 20px var(--neon),
+0 0 40px var(--neon),
+0 0 80px var(--neon);
 }
 
 .character{
@@ -244,7 +280,8 @@ border:1px solid rgba(255,255,255,.2);
 
 position:relative;
 
-animation:card .6s;
+animation:card .6s; box-shadow:
+0 0 20px var(--neonSoft);
 
 }
 
@@ -332,6 +369,16 @@ font-size:20px;
 
 }
 
+.close{
+
+color:var(--neon);
+
+text-shadow:
+0 0 5px var(--neon),
+0 0 15px var(--neon);
+
+}
+
 /* MUSIC */
 
 .music{
@@ -347,30 +394,31 @@ left:40px;
 .music button{
 
 width:60px;
-
 height:60px;
-
 border-radius:50%;
 
-border:1px solid white;
+border:1px solid var(--neon);
 
 background:transparent;
-
-color:white;
+color:var(--neon);
 
 font-size:20px;
-
 cursor:pointer;
-
 transition:.4s;
+
+box-shadow:
+0 0 10px var(--neonSoft);
 
 }
 
 .music button:hover{
 
-background:white;
-
+background:var(--neon);
 color:black;
+
+box-shadow:
+0 0 20px var(--neon),
+0 0 50px var(--neon);
 
 }
 
