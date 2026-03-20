@@ -3,22 +3,35 @@ document.addEventListener("DOMContentLoaded",()=>{
 let player = document.getElementById("player")
 let title = document.getElementById("title")
 let bg = document.getElementById("bg")
+let fade = document.getElementById("fade")
 
-/* ========= SISTEMA DE FONDOS ========= */
+/* ========= TRANSICION ANIME ========= */
 
-function changeBG(img){
+function animeTransition(img){
+
+fade.classList.add("active")
+
+setTimeout(()=>{
+
 bg.style.backgroundImage = "url('"+img+"')"
+
+setTimeout(()=>{
+fade.classList.remove("active")
+},300)
+
+},600)
+
 }
 
 /* fondo inicial LOGIN */
-changeBG("https://i.postimg.cc/MpKDtbrF/wp13966102-shikamaru-pc-wallpapers.jpg")
+bg.style.backgroundImage = "url('https://i.postimg.cc/MpKDtbrF/wp13966102-shikamaru-pc-wallpapers.jpg')"
 
 /* ========= EVENTOS ========= */
 
 title.addEventListener("click",()=>{
 document.getElementById("about").classList.remove("hidden")
 
-changeBG("https://i.postimg.cc/L8bzDdPB/wp13966112-shikamaru-pc-wallpapers.jpg")
+animeTransition("https://i.postimg.cc/L8bzDdPB/wp13966112-shikamaru-pc-wallpapers.jpg")
 })
 
 window.enterSite = function(){
@@ -31,7 +44,7 @@ if(u === "seiren" && p === "stark"){
 document.getElementById("login").classList.add("hidden")
 document.getElementById("hero").classList.remove("hidden")
 
-changeBG("https://i.postimg.cc/zGVhVdQm/wp13966252-shikamaru-pc-wallpapers.jpg")
+animeTransition("https://i.postimg.cc/zGVhVdQm/wp13966252-shikamaru-pc-wallpapers.jpg")
 
 }else{
 
@@ -50,7 +63,7 @@ box.classList.remove("shake")
 window.closeAbout = function(){
 document.getElementById("about").classList.add("hidden")
 
-changeBG("assets/bg-hero.jpg")
+animeTransition("https://i.postimg.cc/zGVhVdQm/wp13966252-shikamaru-pc-wallpapers.jpg")
 }
 
 window.toggleMusic = function(){
