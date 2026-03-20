@@ -9,17 +9,17 @@ let fade = document.getElementById("fade")
 
 function animeTransition(img){
 
-fade.classList.add("active")
+fade.style.transition = "opacity .25s"
+fade.style.opacity = "1"
 
 setTimeout(()=>{
 
 bg.style.backgroundImage = "url('"+img+"')"
 
-setTimeout(()=>{
-fade.classList.remove("active")
-},300)
+fade.style.transition = "opacity .7s"
+fade.style.opacity = "0"
 
-},600)
+},250)
 
 }
 
