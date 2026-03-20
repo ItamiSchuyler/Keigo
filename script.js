@@ -1,163 +1,199 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  let player = document.getElementById("player");
-  let title = document.getElementById("title");
-  let bg = document.getElementById("bg");
-  let fade = document.getElementById("fade");
-  let glitch = document.getElementById("glitch");
-  let character = document.querySelector(".character");
+const player = document.getElementById("player");
 
-  /* ========= TRANSICION ANIME ========= */
+const title = document.getElementById("title");
 
-  function animeTransition(img) {
+const bg = document.getElementById("bg");
 
-    fade.style.transition = "opacity .2s";
-    fade.style.opacity = "1";
+const fade = document.getElementById("fade");
 
-    setTimeout(() => {
+const glitch = document.getElementById("glitch");
 
-      bg.style.backgroundImage = `url('${img}')`;
+const character = document.querySelector(".character");
 
-      fade.style.transition = "opacity .6s";
-      fade.style.opacity = "0";
 
-    }, 200);
+/* TRANSICION */
 
-  }
+function animeTransition(img){
 
-  /* ========= GLITCH IMPACT ========= */
+fade.style.opacity="1";
 
-  function triggerGlitch() {
+setTimeout(()=>{
 
-    glitch.classList.add("glitchActive");
+bg.style.backgroundImage=`url(${img})`;
 
-    /* pequeño freeze para efecto anime */
+fade.style.opacity="0";
 
-    document.body.style.filter = "contrast(1.4) brightness(1.2)";
+},200);
 
-    setTimeout(() => {
+}
 
-      document.body.style.filter = "none";
-      glitch.classList.remove("glitchActive");
 
-    }, 350);
+/* GLITCH */
 
-  }
+function triggerGlitch(){
 
-  /* fondo inicial LOGIN */
+glitch.classList.add("glitchActive");
 
-  bg.style.backgroundImage =
-    "url('https://i.postimg.cc/MpKDtbrF/wp13966102-shikamaru-pc-wallpapers.jpg')";
+document.body.style.filter="contrast(1.4) brightness(1.2)";
 
-  /* ========= EVENTOS ========= */
+setTimeout(()=>{
 
-  title.addEventListener("click", () => {
+document.body.style.filter="none";
 
-    triggerGlitch();
+glitch.classList.remove("glitchActive");
 
-    setTimeout(() => {
+},300);
 
-      document.getElementById("about").classList.remove("hidden");
+}
 
-      animeTransition(
-        "https://i.postimg.cc/L8bzDdPB/wp13966112-shikamaru-pc-wallpapers.jpg"
-      );
 
-    }, 120);
+/* fondo inicial */
 
-  });
+bg.style.backgroundImage=
+"url(https://i.postimg.cc/MpKDtbrF/wp13966102-shikamaru-pc-wallpapers.jpg)";
 
-  window.enterSite = function () {
 
-    let u = document.getElementById("user").value;
-    let p = document.getElementById("pass").value;
+/* EVENTOS */
 
-    if (u === "seiren" && p === "stark") {
+if(title){
 
-      triggerGlitch();
+title.addEventListener("click",()=>{
 
-      setTimeout(() => {
+triggerGlitch();
 
-        document.getElementById("login").classList.add("hidden");
-        document.getElementById("hero").classList.remove("hidden");
+setTimeout(()=>{
 
-        animeTransition(
-          "https://i.postimg.cc/zGVhVdQm/wp13966252-shikamaru-pc-wallpapers.jpg"
-        );
+document
+.getElementById("about")
+.classList.remove("hidden");
 
-      }, 150);
+animeTransition(
+"https://i.postimg.cc/L8bzDdPB/wp13966112-shikamaru-pc-wallpapers.jpg"
+);
 
-    } else {
+},120);
 
-      let box = document.querySelector(".loginBox");
+});
 
-      box.classList.add("shake");
+}
 
-      setTimeout(() => {
 
-        box.classList.remove("shake");
+/* LOGIN */
 
-      }, 400);
+window.enterSite=function(){
 
-    }
+const u=document.getElementById("user").value;
 
-  };
+const p=document.getElementById("pass").value;
 
-  window.closeAbout = function () {
 
-    triggerGlitch();
+if(u==="seiren" && p==="stark"){
 
-    setTimeout(() => {
+triggerGlitch();
 
-      document.getElementById("about").classList.add("hidden");
+setTimeout(()=>{
 
-      animeTransition(
-        "https://i.postimg.cc/zGVhVdQm/wp13966252-shikamaru-pc-wallpapers.jpg"
-      );
+document
+.getElementById("login")
+.classList.add("hidden");
 
-    }, 120);
+document
+.getElementById("hero")
+.classList.remove("hidden");
 
-  };
+animeTransition(
+"https://i.postimg.cc/zGVhVdQm/wp13966252-shikamaru-pc-wallpapers.jpg"
+);
 
-  window.toggleMusic = function () {
+},150);
 
-    if (player.paused) {
+}
 
-      player.play();
+else{
 
-    } else {
+const box=document.querySelector(".loginBox");
 
-      player.pause();
+box.classList.add("shake");
 
-    }
+setTimeout(()=>{
 
-  };
+box.classList.remove("shake");
 
-  /* ========= PARALLAX + GLOW ========= */
+},400);
 
-  document.addEventListener("mousemove", (e) => {
+}
 
-    let x = e.clientX / window.innerWidth;
-    let y = e.clientY / window.innerHeight;
+}
 
-    let moveX = (x - 0.5) * 25;
-    let moveY = (y - 0.5) * 25;
 
-    bg.style.transform =
-      `scale(1.12) translate(${moveX}px, ${moveY}px)`;
+/* ABOUT */
 
-    if (character) {
+window.closeAbout=function(){
 
-      let glowX = (x - 0.5) * 60;
-      let glowY = (y - 0.5) * 60;
+triggerGlitch();
 
-      character.style.filter = `
-        drop-shadow(${glowX}px ${glowY}px 40px var(--neonStrong))
-        drop-shadow(0 0 25px var(--neonSoft))
-      `;
+setTimeout(()=>{
 
-    }
+document
+.getElementById("about")
+.classList.add("hidden");
 
-  });
+animeTransition(
+"https://i.postimg.cc/zGVhVdQm/wp13966252-shikamaru-pc-wallpapers.jpg"
+);
+
+},120);
+
+}
+
+
+/* MUSIC */
+
+window.toggleMusic=function(){
+
+if(player.paused){
+
+player.play();
+
+}else{
+
+player.pause();
+
+}
+
+}
+
+
+/* PARALLAX */
+
+document.addEventListener("mousemove",(e)=>{
+
+let x=e.clientX/window.innerWidth;
+
+let y=e.clientY/window.innerHeight;
+
+let moveX=(x-0.5)*25;
+
+let moveY=(y-0.5)*25;
+
+bg.style.transform=
+`scale(1.12) translate(${moveX}px,${moveY}px)`;
+
+
+if(character){
+
+let glowX=(x-0.5)*60;
+
+let glowY=(y-0.5)*60;
+
+character.style.filter=
+`drop-shadow(${glowX}px ${glowY}px 40px var(--neonStrong))
+drop-shadow(0 0 25px var(--neonSoft))`;
+
+}
+
+});
 
 });
