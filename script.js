@@ -95,14 +95,22 @@ triggerGlitch();
 
 setTimeout(()=>{
 
-document
-.getElementById("login")
-.classList.add("hidden");
+const login=document.getElementById("login");
 
-document
-.getElementById("hero")
-.classList.remove("hidden");
+const hero=document.getElementById("hero");
 
+login.style.opacity="0";
+
+setTimeout(()=>{
+
+login.classList.add("hidden");
+
+hero.classList.remove("hidden");
+
+hero.style.opacity="1";
+
+},300);
+  
 animeTransition(
 "https://i.postimg.cc/zGVhVdQm/wp13966252-shikamaru-pc-wallpapers.jpg"
 );
