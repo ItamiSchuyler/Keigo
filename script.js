@@ -11,14 +11,14 @@ bg.style.backgroundImage = "url('"+img+"')"
 }
 
 /* fondo inicial LOGIN */
-changeBG("assets/bg-login.jpg")
+changeBG("https://i.postimg.cc/MpKDtbrF/wp13966102-shikamaru-pc-wallpapers.jpg")
 
 /* ========= EVENTOS ========= */
 
 title.addEventListener("click",()=>{
 document.getElementById("about").classList.remove("hidden")
 
-changeBG("assets/bg-about.jpg")
+changeBG("https://i.postimg.cc/L8bzDdPB/wp13966112-shikamaru-pc-wallpapers.jpg")
 })
 
 window.enterSite = function(){
@@ -31,7 +31,7 @@ if(u === "keigo" && p === "stark"){
 document.getElementById("login").classList.add("hidden")
 document.getElementById("hero").classList.remove("hidden")
 
-changeBG("assets/bg-hero.jpg")
+changeBG("https://i.postimg.cc/zGVhVdQm/wp13966252-shikamaru-pc-wallpapers.jpg")
 
 }else{
 
