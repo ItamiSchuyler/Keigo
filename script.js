@@ -1,207 +1,69 @@
-document.addEventListener("DOMContentLoaded", () => {
+const login = document.getElementById("login")
 
-const player = document.getElementById("player");
+const hero = document.getElementById("hero")
 
-const title = document.getElementById("title");
+const about = document.getElementById("about")
 
-const bg = document.getElementById("bg");
+const fade = document.getElementById("fade")
 
-const fade = document.getElementById("fade");
+const user = document.getElementById("user")
 
-const glitch = document.getElementById("glitch");
+const pass = document.getElementById("pass")
 
-const character = document.querySelector(".character");
+const player = document.getElementById("player")
 
+function enterSite(){
 
-/* TRANSICION */
+if(user.value==="admin" && pass.value==="admin"){
 
-function animeTransition(img){
-
-fade.style.opacity="1";
-
-setTimeout(()=>{
-
-bg.style.backgroundImage=`url(${img})`;
-
-fade.style.opacity="0";
-
-},200);
-
-}
-
-
-/* GLITCH */
-
-function triggerGlitch(){
-
-glitch.classList.add("glitchActive");
-
-document.body.style.filter="contrast(1.4) brightness(1.2)";
+fade.style.opacity="1"
 
 setTimeout(()=>{
 
-document.body.style.filter="none";
+login.classList.add("hidden")
 
-glitch.classList.remove("glitchActive");
+hero.classList.remove("hidden")
 
-},300);
+fade.style.opacity="0"
 
-}
-
-
-/* fondo inicial */
-
-bg.style.backgroundImage=
-"url(https://i.postimg.cc/MpKDtbrF/wp13966102-shikamaru-pc-wallpapers.jpg)";
-
-
-/* EVENTOS */
-
-if(title){
-
-title.addEventListener("click",()=>{
-
-triggerGlitch();
-
-setTimeout(()=>{
-
-document
-.getElementById("about")
-.classList.remove("hidden");
-
-animeTransition(
-"https://i.postimg.cc/L8bzDdPB/wp13966112-shikamaru-pc-wallpapers.jpg"
-);
-
-},120);
-
-});
-
-}
-
-
-/* LOGIN */
-
-window.enterSite=function(){
-
-const u=document.getElementById("user").value;
-
-const p=document.getElementById("pass").value;
-
-
-if(u==="seiren" && p==="stark"){
-
-triggerGlitch();
-
-setTimeout(()=>{
-
-const login=document.getElementById("login");
-
-const hero=document.getElementById("hero");
-
-login.style.opacity="0";
-
-setTimeout(()=>{
-
-login.classList.add("hidden");
-
-hero.classList.remove("hidden");
-
-hero.style.opacity="1";
-
-},300);
-  
-animeTransition(
-"https://i.postimg.cc/zGVhVdQm/wp13966252-shikamaru-pc-wallpapers.jpg"
-);
-
-},150);
-
-}
-
-else{
-
-const box=document.querySelector(".loginBox");
-
-box.classList.add("shake");
-
-setTimeout(()=>{
-
-box.classList.remove("shake");
-
-},400);
-
-}
-
-}
-
-
-/* ABOUT */
-
-window.closeAbout=function(){
-
-triggerGlitch();
-
-setTimeout(()=>{
-
-document
-.getElementById("about")
-.classList.add("hidden");
-
-animeTransition(
-"https://i.postimg.cc/zGVhVdQm/wp13966252-shikamaru-pc-wallpapers.jpg"
-);
-
-},120);
-
-}
-
-
-/* MUSIC */
-
-window.toggleMusic=function(){
-
-if(player.paused){
-
-player.play();
+},500)
 
 }else{
 
-player.pause();
+login.classList.add("shake")
+
+setTimeout(()=>{
+
+login.classList.remove("shake")
+
+},400)
 
 }
 
 }
 
+function openAbout(){
 
-/* PARALLAX */
-
-document.addEventListener("mousemove",(e)=>{
-
-let x=e.clientX/window.innerWidth;
-
-let y=e.clientY/window.innerHeight;
-
-let moveX=(x-0.5)*25;
-
-let moveY=(y-0.5)*25;
-
-bg.style.transform=
-`scale(1.12) translate(${moveX}px,${moveY}px)`;
-
-
-if(character){
-
-let glowX=(x-0.5)*60;
-
-let glowY=(y-0.5)*60;
-
-character.style.filter=
-`drop-shadow(${glowX}px ${glowY}px 40px var(--neonStrong))
-drop-shadow(0 0 25px var(--neonSoft))`;
+about.classList.remove("hidden")
 
 }
 
-});
+function closeAbout(){
 
-});
+about.classList.add("hidden")
+
+}
+
+function toggleMusic(){
+
+if(player.paused){
+
+player.play()
+
+}else{
+
+player.pause()
+
+}
+
+}
