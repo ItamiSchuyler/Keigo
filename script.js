@@ -20,9 +20,9 @@ const backgrounds={
 
 login:"https://i.postimg.cc/RhyhZnq2/fondo-1.png",
 
-hero:"https://i.postimg.cc/s2dnZntC/fondo-2.png",
+hero:"https://i.postimg.cc/Qd399wXj/fondo-2222.png",
 
-about:"https://i.postimg.cc/43L1Q4YH/fondo-3.png"
+about:"https://i.postimg.cc/s2dnZntC/fondo-2.png"
 
 }
 
