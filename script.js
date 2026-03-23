@@ -18,11 +18,11 @@ const bg = document.getElementById("bg")
 
 const backgrounds={
 
-login:"https://i.postimg.cc/rpJ60qVQ/87a1d82fb5bc9d1e9baee8d72739b656.gif",
+login:"https://i.postimg.cc/RhyhZnq2/fondo-1.png",
 
-hero:"https://i.postimg.cc/L6y5Y6qK/1665.gif",
+hero:"https://i.postimg.cc/s2dnZntC/fondo-2.png",
 
-about:"https://i.postimg.cc/DZx8pKQm/tumblr-6baf.gif"
+about:"https://i.postimg.cc/s2dnZntC/fondo-2.png"
 
 }
 
