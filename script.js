@@ -1,18 +1,18 @@
-const login = document.getElementById("login")
+const login=document.getElementById("login")
 
-const hero = document.getElementById("hero")
+const hero=document.getElementById("hero")
 
-const about = document.getElementById("about")
+const about=document.getElementById("about")
 
-const fade = document.getElementById("fade")
+const fade=document.getElementById("fade")
 
-const user = document.getElementById("user")
+const user=document.getElementById("user")
 
-const pass = document.getElementById("pass")
+const pass=document.getElementById("pass")
 
-const player = document.getElementById("player")
+const player=document.getElementById("player")
 
-const bg = document.getElementById("bg")
+const bg=document.getElementById("bg")
 
 /* BACKGROUNDS */
 
@@ -22,7 +22,7 @@ login:"https://i.postimg.cc/RhyhZnq2/fondo-1.png",
 
 hero:"https://i.postimg.cc/s2dnZntC/fondo-2.png",
 
-about:"https://i.postimg.cc/s2dnZntC/fondo-2.png"
+about:"https://i.postimg.cc/43L1Q4YH/fondo-3.png"
 
 }
 
@@ -32,11 +32,11 @@ fade.style.opacity="1"
 
 setTimeout(()=>{
 
-bg.style.backgroundImage=`url(${backgrounds[name]})`
+bg.style.backgroundImage=`url('${backgrounds[name]}')`
 
 fade.style.opacity="0"
 
-},300)
+},350)
 
 }
 
@@ -48,13 +48,15 @@ if(user.value==="seiren" && pass.value==="admin"){
 
 changeBG("hero")
 
-login.classList.add("hidden")
+login.style.opacity="0"
 
 setTimeout(()=>{
 
+login.classList.add("hidden")
+
 hero.classList.remove("hidden")
 
-},300)
+},500)
 
 }else{
 
@@ -104,6 +106,10 @@ player.pause()
 
 }
 
-/* INITIAL BG */
+/* INITIAL LOAD */
+
+window.onload=()=>{
 
 changeBG("login")
+
+}
