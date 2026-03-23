@@ -14,15 +14,21 @@ box-sizing:border-box;
 
 }
 
+
+
+
 body{
 
 margin:0;
-font-family:"Orbitron",sans-serif;
+font-family:'Teko',sans-serif;
+letter-spacing:1px;
 color:white;
 overflow:hidden;
 background:black;
 
 }
+
+
 
 /* BACKGROUND */
 
@@ -304,6 +310,9 @@ transition:.6s;
 }
 
 .hero h2{
+
+font-family:'Russo One',sans-serif;
+
 
 font-size:100px;
 
