@@ -113,3 +113,46 @@ window.onload=()=>{
 changeBG("login")
 
 }
+
+
+const posts=document.getElementById("posts")
+
+function goPosts(){
+
+changeBG("about")
+
+hero.classList.add("hidden")
+
+setTimeout(()=>{
+
+posts.classList.remove("hidden")
+
+},300)
+
+}
+
+/* SCROLL NAVIGATION */
+
+window.addEventListener("wheel",(e)=>{
+
+if(e.deltaY>0 && !hero.classList.contains("hidden")){
+
+goPosts()
+
+}
+
+if(e.deltaY<0 && !posts.classList.contains("hidden")){
+
+posts.classList.add("hidden")
+
+setTimeout(()=>{
+
+hero.classList.remove("hidden")
+
+changeBG("hero")
+
+},300)
+
+}
+
+})
