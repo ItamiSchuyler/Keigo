@@ -14,7 +14,7 @@ const player = document.getElementById("player")
 
 function enterSite(){
 
-if(user.value==="admin" && pass.value==="admin"){
+if(user.value==="seiren" && pass.value==="stark"){
 
 fade.style.opacity="1"
 
