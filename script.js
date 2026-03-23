@@ -44,7 +44,7 @@ fade.style.opacity="0"
 
 function enterSite(){
 
-if(user.value==="admin" && pass.value==="admin"){
+if(user.value==="seiren" && pass.value==="admin"){
 
 changeBG("hero")
 
