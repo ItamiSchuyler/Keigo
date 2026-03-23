@@ -682,3 +682,56 @@ font-size:20px;
 color:#9dffb3;
 
 }
+
+
+.scrollArrow{
+
+position:absolute;
+
+bottom:40px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:40px;
+
+color:var(--neon);
+
+cursor:pointer;
+
+animation:arrow 2s infinite;
+
+text-shadow:
+
+0 0 15px var(--neon);
+
+}
+
+@keyframes arrow{
+
+0%{
+
+transform:
+translateX(-50%)
+translateY(0);
+
+}
+
+50%{
+
+transform:
+translateX(-50%)
+translateY(15px);
+
+}
+
+100%{
+
+transform:
+translateX(-50%)
+translateY(0);
+
+}
+
+}
