@@ -1,70 +1,52 @@
-const login=document.getElementById("login")
+const loginView=document.getElementById("loginView")
+const menuView=document.getElementById("menuView")
+const aboutView=document.getElementById("aboutView")
+const postsView=document.getElementById("postsView")
 
-const hero=document.getElementById("hero")
-
-const about=document.getElementById("about")
-
-const fade=document.getElementById("fade")
-
-const user=document.getElementById("user")
-
-const pass=document.getElementById("pass")
-
-const player=document.getElementById("player")
+const transition=document.getElementById("transition")
 
 const bg=document.getElementById("bg")
 
-/* BACKGROUNDS */
+function animeTransition(callback){
 
-const backgrounds={
-
-login:"https://i.postimg.cc/RhyhZnq2/fondo-1.png",
-
-hero:"https://i.postimg.cc/Qd399wXj/fondo-2222.png",
-
-about:"https://i.postimg.cc/s2dnZntC/fondo-2.png"
-
-}
-
-function changeBG(name){
-
-fade.style.opacity="1"
+transition.style.opacity="1"
 
 setTimeout(()=>{
 
-bg.style.backgroundImage=`url('${backgrounds[name]}')`
+callback()
 
-fade.style.opacity="0"
+transition.style.opacity="0"
 
-},350)
+},900)
 
 }
 
-/* LOGIN */
+function login(){
 
-function enterSite(){
+let u=document.getElementById("user").value
+let p=document.getElementById("pass").value
 
-if(user.value==="seiren" && pass.value==="admin"){
+if(u==="seiren" && p==="admin"){
 
-changeBG("hero")
+animeTransition(()=>{
 
-login.style.opacity="0"
+loginView.classList.add("hidden")
 
-setTimeout(()=>{
+menuView.classList.remove("hidden")
 
-login.classList.add("hidden")
+bg.style.backgroundImage=
+"url(https://i.postimg.cc/RVZXrnZf/Gemini-Generated-Image-ftmryaftmryaftmr.png)"
 
-hero.classList.remove("hidden")
-
-},500)
+})
 
 }else{
 
-login.classList.add("shake")
+document.querySelector(".loginCard").classList.add("shake")
 
 setTimeout(()=>{
 
-login.classList.remove("shake")
+document.querySelector(".loginCard")
+.classList.remove("shake")
 
 },400)
 
@@ -72,87 +54,52 @@ login.classList.remove("shake")
 
 }
 
-/* ABOUT */
-
 function openAbout(){
 
-changeBG("about")
+animeTransition(()=>{
 
-about.classList.remove("hidden")
+menuView.classList.add("hidden")
 
-}
+aboutView.classList.remove("hidden")
 
-function closeAbout(){
-
-changeBG("hero")
-
-about.classList.add("hidden")
+})
 
 }
 
-/* MUSIC */
+function openPosts(){
 
-function toggleMusic(){
+animeTransition(()=>{
 
-if(player.paused){
+menuView.classList.add("hidden")
 
-player.play()
+postsView.classList.remove("hidden")
 
-}else{
-
-player.pause()
+})
 
 }
 
-}
+function backMenu(){
 
-/* INITIAL LOAD */
+animeTransition(()=>{
 
-window.onload=()=>{
+aboutView.classList.add("hidden")
 
-changeBG("login")
+postsView.classList.add("hidden")
 
-}
+menuView.classList.remove("hidden")
 
-
-const posts=document.getElementById("posts")
-
-function goPosts(){
-
-changeBG("about")
-
-hero.classList.add("hidden")
-
-setTimeout(()=>{
-
-posts.classList.remove("hidden")
-
-},300)
+})
 
 }
 
-/* SCROLL NAVIGATION */
+/* PARALLAX */
 
-window.addEventListener("wheel",(e)=>{
+document.addEventListener("mousemove",(e)=>{
 
-if(e.deltaY>0 && !hero.classList.contains("hidden")){
+let x=e.clientX/30
+let y=e.clientY/30
 
-goPosts()
-
-}
-
-if(e.deltaY<0 && !posts.classList.contains("hidden")){
-
-posts.classList.add("hidden")
-
-setTimeout(()=>{
-
-hero.classList.remove("hidden")
-
-changeBG("hero")
-
-},300)
-
-}
+bg.style.transform=
+`scale(1.1) translate(${-x}px,${-y}px)`
 
 })
