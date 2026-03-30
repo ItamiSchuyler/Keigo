@@ -7,6 +7,20 @@ const transition=document.getElementById("transition")
 
 const bg=document.getElementById("bg")
 
+const backgrounds={
+
+menu:"https://i.postimg.cc/RVZXrnZf/Gemini-Generated-Image-ftmryaftmryaftmr.png",
+
+about:"https://i.postimg.cc/0jRb5MTj/fondo-1.png",
+
+posts:"https://i.postimg.cc/N0rwbNzP/fondo-2.png"
+
+}
+
+/* INITIAL BG */
+
+bg.style.backgroundImage=`url(${backgrounds.menu})`
+
 function animeTransition(callback){
 
 transition.style.opacity="1"
@@ -17,14 +31,14 @@ callback()
 
 transition.style.opacity="0"
 
-},900)
+},700)
 
 }
 
 function login(){
 
-let u=document.getElementById("user").value
-let p=document.getElementById("pass").value
+let u=user.value
+let p=pass.value
 
 if(u==="seiren" && p==="admin"){
 
@@ -35,13 +49,14 @@ loginView.classList.add("hidden")
 menuView.classList.remove("hidden")
 
 bg.style.backgroundImage=
-"url(https://i.postimg.cc/RVZXrnZf/Gemini-Generated-Image-ftmryaftmryaftmr.png)"
+`url(${backgrounds.menu})`
 
 })
 
 }else{
 
-document.querySelector(".loginCard").classList.add("shake")
+document.querySelector(".loginCard")
+.classList.add("shake")
 
 setTimeout(()=>{
 
@@ -101,25 +116,15 @@ menuView.classList.remove("hidden")
 
 }
 
-const backgrounds={
-
-menu:"https://i.postimg.cc/RVZXrnZf/Gemini-Generated-Image-ftmryaftmryaftmr.png",
-
-about:"https://i.postimg.cc/0jRb5MTj/fondo-1.png",
-
-posts:"https://i.postimg.cc/N0rwbNzP/fondo-2.png"
-
-}
-
-
 /* PARALLAX */
 
 document.addEventListener("mousemove",(e)=>{
 
-let x=(e.clientX-window.innerWidth/2)/80
-let y=(e.clientY-window.innerHeight/2)/80
+let x=(e.clientX-window.innerWidth/2)/90
+let y=(e.clientY-window.innerHeight/2)/90
 
 bg.style.transform=
+
 `scale(1.1) translate(${-x}px,${-y}px)`
 
 })
