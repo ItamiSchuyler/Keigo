@@ -58,6 +58,9 @@ function openAbout(){
 
 animeTransition(()=>{
 
+bg.style.backgroundImage=
+`url(${backgrounds.about})`
+
 menuView.classList.add("hidden")
 
 aboutView.classList.remove("hidden")
@@ -70,6 +73,9 @@ function openPosts(){
 
 animeTransition(()=>{
 
+bg.style.backgroundImage=
+`url(${backgrounds.posts})`
+
 menuView.classList.add("hidden")
 
 postsView.classList.remove("hidden")
@@ -81,6 +87,9 @@ postsView.classList.remove("hidden")
 function backMenu(){
 
 animeTransition(()=>{
+
+bg.style.backgroundImage=
+`url(${backgrounds.menu})`
 
 aboutView.classList.add("hidden")
 
