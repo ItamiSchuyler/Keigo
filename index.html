@@ -4,90 +4,92 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Seiren</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
- 
-  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-
-<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<div id="fade"></div>
-
 <div class="background" id="bg"></div>
 
-<div class="particles"></div>
+<div id="transition"></div>
 
 <!-- LOGIN -->
 
-<section class="login" id="login">
+<section id="loginView">
 
-<div class="loginBox">
+<div class="loginCard">
 
-<h1>Welcome</h1>
+<h1>Access</h1>
 
 <input id="user" placeholder="username">
 
-<input id="pass" placeholder="password" type="password">
+<input id="pass" type="password" placeholder="password">
 
-<button type="button" onclick="enterSite()">
-Enter
+<button onclick="login()">
+ENTER
 </button>
 
 </div>
 
 </section>
 
-<!-- HERO -->
+<!-- MENU -->
 
-<section class="hero hidden" id="hero">
+<section id="menuView" class="hidden">
 
-<img src="https://i.postimg.cc/2S17WjtY/Nara-Shikamaru-full-714829-copia.png"
-class="character">
+<div class="shurikenBox">
 
-<h2 id="title" onclick="openAbout()">
-Seiren
-</h2>
+<img src="https://i.postimg.cc/qqpJ7R1k/shuriken.png"
+class="shuriken"
+onclick="openAbout()">
 
-<p class="tag">
-Stark wie rock.
-</p>
-
-</section>
-
- <!-- SCROLL ARROW -->
-
-<div class="scrollArrow" onclick="goPosts()">
-
-↓
+<img src="https://i.postimg.cc/qqpJ7R1k/shuriken.png"
+class="shuriken"
+onclick="openPosts()">
 
 </div>
 
-<!-- POSTS PAGE -->
+</section>
 
-<section class="posts hidden" id="posts">
+<!-- ABOUT -->
 
-<h2 class="postTitle">
-Shikamaru Archive
-</h2>
+<section id="aboutView" class="hidden">
 
-<div class="postGrid">
+<div class="card">
+
+<h2>Seiren</h2>
+
+<p>
+Lorem ipsum dolor sit amet
+</p>
+
+<button onclick="backMenu()">
+BACK
+</button>
+
+</div>
+
+</section>
+
+<!-- POSTS -->
+
+<section id="postsView" class="hidden">
+
+<div class="grid">
 
 <div class="post">
 
 <img src="https://i.postimg.cc/QdJr6H7R/shika1.jpg">
 
 <p>
-"Sometimes I wish I was a cloud"
+Sometimes I wish I was a cloud
 </p>
 
 </div>
@@ -97,93 +99,18 @@ Shikamaru Archive
 <img src="https://i.postimg.cc/Z5k1J4w3/shika2.jpg">
 
 <p>
-IQ 200 strategist of Konoha
-</p>
-
-</div>
-
-<div class="post">
-
-<img src="https://i.postimg.cc/13g0XK6k/shika3.jpg">
-
-<p>
-Shadow possession master
+IQ 200 strategist
 </p>
 
 </div>
 
 </div>
 
-</section>
-
-<!-- ABOUT -->
-
-<section class="about hidden" id="about">
-
-<div class="aboutCard">
-
-<div class="left">
-
-<img src="https://i.postimg.cc/C1yrvn8h/tumblr-73ca0256dde3dba1ce6d8b2dcd92bb7d-73cd4857-540.gif">
-
-<div class="quote">
-Lorem ipsum dolor sit amet consectetur
-</div>
-
-</div>
-
-<div class="right">
-
-<h3>Seiren</h3>
-
-<p class="id">
-IDNUMXXXX
-</p>
-
-<div class="data">
-
-<div>
-<label>Name</label>
-<span>Ferch</span>
-</div>
-
-<div>
-<label>Country</label>
-<span>Mexico</span>
-</div>
-
-<div>
-<label>Favorite Number</label>
-<span>22</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="close" onclick="closeAbout()">
-✕
-</div>
-
-</div>
-
-</section>
-
-<!-- MUSIC -->
-
-<div class="music">
-
-<button type="button" onclick="toggleMusic()">
-♫
+<button onclick="backMenu()">
+BACK
 </button>
 
-</div>
-
-<audio id="player" loop>
-
-<source src="assets/music.mp3">
-
-</audio>
+</section>
 
 <script src="script.js"></script>
 
