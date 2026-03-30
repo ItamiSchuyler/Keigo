@@ -92,12 +92,23 @@ menuView.classList.remove("hidden")
 
 }
 
+const backgrounds={
+
+menu:"https://i.postimg.cc/RVZXrnZf/Gemini-Generated-Image-ftmryaftmryaftmr.png",
+
+about:"https://i.postimg.cc/0jRb5MTj/fondo-1.png",
+
+posts:"https://i.postimg.cc/N0rwbNzP/fondo-2.png"
+
+}
+
+
 /* PARALLAX */
 
 document.addEventListener("mousemove",(e)=>{
 
-let x=e.clientX/30
-let y=e.clientY/30
+let x=(e.clientX-window.innerWidth/2)/80
+let y=(e.clientY-window.innerHeight/2)/80
 
 bg.style.transform=
 `scale(1.1) translate(${-x}px,${-y}px)`
