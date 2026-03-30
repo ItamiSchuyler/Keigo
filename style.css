@@ -171,116 +171,107 @@ pointer-events:none;
 
 }
 
+/* SHURIKEN BASE */
+
 .shuriken{
 
 position:absolute;
 
-width:220px;
+width:300px;
 
 cursor:pointer;
 
 animation:
-throw1 2.2s cubic-bezier(.2,.8,.2,1),
-spin 1.2s linear infinite;
+spin 8s linear infinite,
+idleFloat 6s ease-in-out infinite;
 
 transition:.4s;
 
-filter:brightness(.8);
+filter:
+brightness(.85)
+drop-shadow(0 15px 25px rgba(0,0,0,.6));
 
 pointer-events:auto;
 
 }
 
-/* second shuriken */
+/* POSITIONS (como si estuvieran lanzados) */
+
+.shuriken:nth-child(1){
+
+left:18%;
+
+top:35%;
+
+transform:rotate(-15deg);
+
+}
 
 .shuriken:nth-child(2){
 
-width:200px;
+right:18%;
 
-animation:
-throw2 2.4s cubic-bezier(.2,.8,.2,1),
-spin 1.3s linear infinite;
+top:55%;
+
+transform:rotate(20deg);
 
 }
+
+/* ROTATION */
+
+@keyframes spin{
+
+from{
+
+rotate:0deg;
+
+}
+
+to{
+
+rotate:360deg;
+
+}
+
+}
+
+/* FLOAT muy leve */
+
+@keyframes idleFloat{
+
+0%{
+
+translate:0px 0px;
+
+}
+
+50%{
+
+translate:0px -10px;
+
+}
+
+100%{
+
+translate:0px 0px;
+
+}
+
+}
+
+/* HOVER */
 
 .shuriken:hover{
 
 filter:
 
-drop-shadow(0 0 40px #39ff14)
-brightness(2);
+brightness(1.2)
+drop-shadow(0 0 40px #39ff14);
 
-transform:scale(1.15);
-
-}
-
-@keyframes throw1{
-
-0%{
-
-transform:
-translate(-600px,300px)
-rotate(-180deg)
-scale(.3);
-
-opacity:0;
-
-filter:blur(10px);
+transform:scale(1.08);
 
 }
 
-60%{
-
-opacity:1;
-
-filter:blur(2px);
-
-}
-
-100%{
-
-transform:
-translate(20vw,-10vh)
-rotate(0deg)
-scale(1);
-
-filter:blur(0);
-
-}
-
-}
-
-@keyframes throw2{
-
-0%{
-
-transform:
-translate(800px,-400px)
-rotate(200deg)
-scale(.3);
-
-opacity:0;
-
-filter:blur(10px);
-
-}
-
-60%{
-
-opacity:1;
-
-}
-
-100%{
-
-transform:
-translate(65vw,20vh)
-rotate(0deg)
-scale(1);
-
-}
-
-}
 /* spin separado */
 
 @keyframes spin{
