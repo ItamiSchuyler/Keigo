@@ -2,118 +2,83 @@
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Seiren</title>
 
 <link rel="stylesheet" href="style.css">
-
-
 <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <div class="background" id="bg"></div>
-
 <div id="transition"></div>
 
 <!-- LOGIN -->
-
 <section id="loginView">
-
 <div class="loginCard">
 
 <h1>Access</h1>
 
 <input id="user" placeholder="username" autocomplete="off">
-
 <input id="pass" type="password" placeholder="password" autocomplete="off">
 
-<button onclick="login()">
-ENTER
-</button>
+<button onclick="login()">ENTER</button>
 
 </div>
-
 </section>
 
 <!-- MENU -->
-
 <section id="menuView" class="hidden">
 
 <div class="shurikenBox">
 
 <img src="https://i.postimg.cc/3xVyfctH/Gemini-Generated-Image-q0phi9q0phi9q0ph-copia.png"
-class="shuriken"
-onclick="openAbout()">
+class="shuriken">
 
 <img src="https://i.postimg.cc/3xVyfctH/Gemini-Generated-Image-q0phi9q0phi9q0ph-copia.png"
-class="shuriken"
-onclick="openPosts()">
+class="shuriken">
 
 </div>
 
 </section>
 
 <!-- ABOUT -->
-
 <section id="aboutView" class="hidden">
-
 <div class="card">
 
 <h2>Seiren</h2>
+<p>Lorem ipsum dolor sit amet</p>
 
-<p>
-Lorem ipsum dolor sit amet
-</p>
-
-<button onclick="backMenu()">
-BACK
-</button>
+<button onclick="backMenu()">BACK</button>
 
 </div>
-
 </section>
 
 <!-- POSTS -->
-
 <section id="postsView" class="hidden">
 
 <div class="grid">
 
 <div class="post">
-
 <img src="https://i.postimg.cc/QdJr6H7R/shika1.jpg">
-
-<p>
-Sometimes I wish I was a cloud
-</p>
-
+<p>Sometimes I wish I was a cloud</p>
 </div>
 
 <div class="post">
-
 <img src="https://i.postimg.cc/Z5k1J4w3/shika2.jpg">
-
-<p>
-IQ 200 strategist
-</p>
-
+<p>IQ 200 strategist</p>
 </div>
 
 </div>
 
-<button onclick="backMenu()">
-BACK
-</button>
+<button onclick="backMenu()">BACK</button>
 
 </section>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
